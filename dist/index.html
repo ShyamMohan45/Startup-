@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QuickBite AI — Food Delivery, Reimagined by Artificial Intelligence</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="QuickBite AI is the world's leading next-generation food delivery platform. Combining neural network routing, sub-15 minute autonomous dispatch, and personalized AI meal recommendation." />
+  <meta name="keywords" content="QuickBite AI, AI food delivery, instant grocery, dark kitchen, smart logistics, autonomous delivery, sub 15 minute delivery, tech startup" />
+  <meta name="author" content="QuickBite AI Team" />
+
+  <!-- Google Fonts: Poppins (Headings) & Inter (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              orange: '#FF6B00',
+              peach: '#FF914D',
+              dark: '#111111',
+              card: '#1B1B1B',
+              light: '#FFFFFF',
+              softWhite: '#F8F8F8',
+              accent: '#FF4500'
+            }
+          },
+          fontFamily: {
+            heading: ['Poppins', 'sans-serif'],
+            body: ['Inter', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Style entry point -->
+  <script type="module" crossorigin src="/assets/index-CGRznARn.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-TPaWF3hC.css">
+</head>
+<body class="bg-[#0b0b0b] text-[#f8f8f8] selection:bg-[#FF6B00] selection:text-white font-body antialiased relative">
+
+  <!-- Scroll Progress Bar -->
+  <div id="scroll-progress"></div>
+
+  <!-- Cursor Glow Overlay -->
+  <div id="cursor-glow"></div>
+
+  <!-- Sticky Glass Navbar -->
+  <header id="main-navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 py-5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#FF6B00] to-[#FF914D] flex items-center justify-center text-white font-black text-xl shadow-lg shadow-brand-orange/40 group-hover:scale-105 transition-transform">
+          ⚡
+        </div>
+        <div>
+          <span class="font-heading text-xl font-extrabold tracking-tight text-white group-hover:text-brand-orange transition-colors">QuickBite <span class="text-brand-orange">AI</span></span>
+          <span class="block text-[9px] uppercase tracking-widest text-brand-peach font-bold">Billion-Dollar Logistics</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">
+        <a href="#services" class="hover:text-brand-orange transition-colors">Services</a>
+        <a href="#features" class="hover:text-brand-orange transition-colors">AI Tech</a>
+        <a href="#ai-demo" class="hover:text-brand-orange transition-colors flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>AI Lab</a>
+        <a href="#how-it-works" class="hover:text-brand-orange transition-colors">How It Works</a>
+        <a href="#pricing" class="hover:text-brand-orange transition-colors">Pricing</a>
+        <a href="#app" class="hover:text-brand-orange transition-colors">App</a>
+        <a href="#contact" class="hover:text-brand-orange transition-colors">Contact</a>
+      </nav>
+
+      <!-- Right Action Controls -->
+      <div class="hidden sm:flex items-center gap-4">
+        <!-- Sound FX Toggle -->
+        <button id="sound-toggle-btn" onclick="window.toggleSound()" class="text-xs font-semibold px-3 py-1.5 rounded-lg glass-panel text-gray-300 hover:text-white transition-all">
+          🔇 Sound: OFF
+        </button>
+
+        <!-- Primary Glowing CTA -->
+        <button onclick="window.triggerOrderModal('Instant Order Launch', '$15.00')" class="btn-glow-orange btn-ripple px-5 py-2.5 rounded-xl font-bold text-sm text-white flex items-center gap-2">
+          <span>Order Now</span>
+          <span>🚀</span>
+        </button>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button id="mobile-menu-toggle" class="md:hidden text-2xl text-white p-2">
+        ☰
+      </button>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="hidden md:hidden glass-panel border-b border-white/10 px-6 py-6 space-y-4 text-center text-sm">
+      <a href="#services" class="block text-gray-300 hover:text-brand-orange">Services</a>
+      <a href="#features" class="block text-gray-300 hover:text-brand-orange">AI Tech</a>
+      <a href="#ai-demo" class="block text-brand-peach font-bold">AI Lab Demo</a>
+      <a href="#how-it-works" class="block text-gray-300 hover:text-brand-orange">How It Works</a>
+      <a href="#pricing" class="block text-gray-300 hover:text-brand-orange">Pricing</a>
+      <a href="#contact" class="block text-gray-300 hover:text-brand-orange">Contact</a>
+      <button onclick="window.triggerOrderModal('Instant Order', '$15.00')" class="btn-glow-orange w-full py-3 rounded-xl font-bold text-white">
+        Order Now 🚀
+      </button>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT CONTAINER -->
+  <main class="pt-28">
+
+    <!-- HERO SECTION -->
+    <section class="relative min-h-[90vh] flex items-center justify-center overflow-hidden py-16">
+      <!-- Background Canvas for Particles -->
+      <canvas id="hero-canvas" class="absolute inset-0 pointer-events-none z-0"></canvas>
+      
+      <!-- Glow Blobs -->
+      <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-brand-orange/20 rounded-full blur-[120px] pointer-events-none animate-pulse-glow"></div>
+      <div class="absolute bottom-1/3 right-1/4 w-80 h-80 bg-brand-peach/15 rounded-full blur-[100px] pointer-events-none animate-pulse-glow"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <!-- Hero Left Column Text -->
+        <div class="lg:col-span-7 text-center lg:text-left reveal">
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-panel border border-brand-orange/40 text-brand-peach text-xs font-bold uppercase tracking-wider mb-6 shadow-lg">
+            <span class="w-2 h-2 rounded-full bg-brand-orange animate-ping"></span>
+            <span>Next-Gen Autonomous Food Logistics</span>
+          </div>
+
+          <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white mb-6 leading-[1.1]">
+            Food Delivery, <br />
+            <span class="text-gradient-orange">Reimagined by AI.</span>
+          </h1>
+
+          <p class="text-lg sm:text-xl text-gray-300 mb-8 max-w-2xl leading-relaxed">
+            Experience lightning-fast deliveries, AI-powered dish recommendations, sub-15 minute drone dispatches, and your favorite gourmet meals delivered hot in minutes.
+          </p>
+
+          <!-- Dual Hero CTAs -->
+          <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-12">
+            <button onclick="window.triggerOrderModal('QuickBite AI Fast Checkout', '$18.90')" class="btn-glow-orange btn-ripple w-full sm:w-auto px-8 py-4 rounded-2xl font-extrabold text-base text-white flex items-center justify-center gap-3 shadow-xl">
+              <span>Order Now</span>
+              <span class="text-xl">🚀</span>
+            </button>
+            <a href="#services" class="w-full sm:w-auto px-8 py-4 rounded-2xl glass-panel border border-white/20 hover:border-brand-orange/60 font-extrabold text-base text-white hover:text-brand-orange flex items-center justify-center gap-2 transition-all">
+              <span>Explore Restaurants</span>
+              <span>🍔</span>
+            </a>
+          </div>
+
+          <!-- Hero Floating Food Badges -->
+          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3">
+            <span class="px-3.5 py-1.5 rounded-xl glass-panel border border-white/10 text-xs font-semibold text-gray-300 flex items-center gap-1.5 animate-float">
+              <span>🍔</span> Gourmet Burgers
+            </span>
+            <span class="px-3.5 py-1.5 rounded-xl glass-panel border border-white/10 text-xs font-semibold text-gray-300 flex items-center gap-1.5 animate-float-reverse">
+              <span>🍕</span> Artisan Pizza
+            </span>
+            <span class="px-3.5 py-1.5 rounded-xl glass-panel border border-white/10 text-xs font-semibold text-gray-300 flex items-center gap-1.5 animate-float">
+              <span>🍣</span> Fresh Sushi
+            </span>
+            <span class="px-3.5 py-1.5 rounded-xl glass-panel border border-white/10 text-xs font-semibold text-gray-300 flex items-center gap-1.5 animate-float-reverse">
+              <span>🥤</span> Cold Smoothies
+            </span>
+          </div>
+        </div>
+
+        <!-- Hero Right Column Visual 3D Phone Showcase -->
+        <div class="lg:col-span-5 relative flex justify-center reveal">
+          <div class="relative w-full max-w-md glow-card tilt-card rounded-3xl p-3 glass-panel border border-brand-orange/30 shadow-2xl">
+            <!-- Floating Top Card Badge -->
+            <div class="absolute -top-5 -left-5 z-20 glass-panel border border-green-500/40 p-3.5 rounded-2xl shadow-xl flex items-center gap-3 animate-float">
+              <span class="text-2xl">⚡</span>
+              <div>
+                <span class="text-xs font-bold text-white block">Sub-15 Min Guarantee</span>
+                <span class="text-[10px] text-green-400 font-mono">Telemetry: 11m 42s</span>
+              </div>
+            </div>
+
+            <!-- Floating Bottom Card Badge -->
+            <div class="absolute -bottom-5 -right-5 z-20 glass-panel border border-brand-orange/50 p-3.5 rounded-2xl shadow-xl flex items-center gap-3 animate-float-reverse">
+              <span class="text-2xl">🧠</span>
+              <div>
+                <span class="text-xs font-bold text-white block">AI Craving Match</span>
+                <span class="text-[10px] text-brand-peach font-mono">99.8% Accuracy</span>
+              </div>
+            </div>
+
+            <!-- Phone App Graphic Image -->
+            <img src="./assets/hero_phone_mockup.jpg" alt="QuickBite AI Mobile App Dashboard" class="w-full h-auto rounded-2xl object-cover shadow-2xl" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Animated Counters Bar -->
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 relative z-10 w-full">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 p-8 rounded-3xl glass-panel border border-white/10 text-center">
+          <div>
+            <span class="stat-counter text-3xl sm:text-4xl font-extrabold text-brand-orange block mb-1" data-target="10000000" data-suffix="+">0</span>
+            <span class="text-xs text-gray-400 font-semibold uppercase tracking-wider">Orders Delivered</span>
+          </div>
+          <div>
+            <span class="stat-counter text-3xl sm:text-4xl font-extrabold text-white block mb-1" data-target="5000" data-suffix="+">0</span>
+            <span class="text-xs text-gray-400 font-semibold uppercase tracking-wider">Restaurant Partners</span>
+          </div>
+          <div>
+            <span class="stat-counter text-3xl sm:text-4xl font-extrabold text-brand-peach block mb-1" data-target="100" data-suffix="+">0</span>
+            <span class="text-xs text-gray-400 font-semibold uppercase tracking-wider">Cities Active</span>
+          </div>
+          <div>
+            <span class="stat-counter text-3xl sm:text-4xl font-extrabold text-green-400 block mb-1" data-target="99" data-suffix="%">0</span>
+            <span class="text-xs text-gray-400 font-semibold uppercase tracking-wider">Customer Satisfaction</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST & PARTNER SECTION -->
+    <section class="py-12 border-y border-white/10 relative overflow-hidden bg-brand-dark/50">
+      <div class="max-w-7xl mx-auto px-4 text-center mb-6">
+        <span class="text-xs uppercase tracking-widest text-gray-400 font-bold">Trusted by 5,000+ World-Class Restaurant Brands</span>
+      </div>
+      <div class="relative w-full overflow-hidden">
+        <div id="restaurant-marquee-track" class="marquee-content gap-6"></div>
+      </div>
+    </section>
+
+    <!-- ABOUT COMPANY SECTION -->
+    <section id="about" class="py-24 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+          <span class="text-xs uppercase font-bold text-brand-peach tracking-widest px-3 py-1 rounded-full glass-panel border border-brand-orange/30">Company Story</span>
+          <h2 class="text-3xl sm:text-5xl font-extrabold text-white mt-4 mb-4">Building the Future of <span class="text-gradient-orange">Food Infrastructure</span></h2>
+          <p class="text-sm sm:text-base text-gray-300 leading-relaxed">
+            QuickBite AI was founded by Stanford computer scientists and culinary innovators to eliminate urban delivery friction, food coldness, and outdated routing models.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+          <div class="glow-card p-8 rounded-3xl glass-panel text-center">
+            <span class="text-4xl block mb-4">🎯</span>
+            <h3 class="text-xl font-bold text-white mb-2">Our Mission</h3>
+            <p class="text-xs text-gray-400 leading-relaxed">To deliver piping hot, chef-crafted meals to anyone, anywhere in under 15 minutes using zero-emission AI logistics.</p>
+          </div>
+          <div class="glow-card p-8 rounded-3xl glass-panel text-center">
+            <span class="text-4xl block mb-4">🔮</span>
+            <h3 class="text-xl font-bold text-white mb-2">Our Vision</h3>
+            <p class="text-xs text-gray-400 leading-relaxed">A world where personal nutrition is seamlessly managed by predictive AI, empowering healthier and happier global urban communities.</p>
+          </div>
+          <div class="glow-card p-8 rounded-3xl glass-panel text-center">
+            <span class="text-4xl block mb-4">💎</span>
+            <h3 class="text-xl font-bold text-white mb-2">Our Core Values</h3>
+            <p class="text-xs text-gray-400 leading-relaxed">Sub-second precision, uncompromised freshness, zero-waste biodegradable packaging, and partner kitchen prosperity.</p>
+          </div>
+        </div>
+
+        <!-- Interactive Timeline -->
+        <div class="p-8 sm:p-12 rounded-3xl glass-panel border border-white/10 relative overflow-hidden">
+          <h3 class="text-2xl font-bold text-white mb-8 text-center">Company Innovation Timeline</h3>
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-6 text-left">
+            <div class="p-4 rounded-xl bg-white/5 border border-white/10">
+              <span class="text-brand-orange font-mono font-bold text-xs">2023 — SEED</span>
+              <h4 class="text-sm font-bold text-white mt-1">Autonomous Algorithm Patent</h4>
+              <p class="text-[11px] text-gray-400 mt-1">Developed sub-minute kitchen dispatch neural net at Stanford Lab.</p>
+            </div>
+            <div class="p-4 rounded-xl bg-white/5 border border-white/10">
+              <span class="text-brand-peach font-mono font-bold text-xs">2024 — SERIES A</span>
+              <h4 class="text-sm font-bold text-white mt-1">$45M Growth Launch</h4>
+              <p class="text-[11px] text-gray-400 mt-1">Expanded to 25 metro cities with 1,000+ dark kitchen fulfillment hubs.</p>
+            </div>
+            <div class="p-4 rounded-xl bg-white/5 border border-white/10">
+              <span class="text-green-400 font-mono font-bold text-xs">2025 — SERIES B</span>
+              <h4 class="text-sm font-bold text-white mt-1">Drone Corridor Approval</h4>
+              <p class="text-[11px] text-gray-400 mt-1">Received FAA license for autonomous urban food delivery drones.</p>
+            </div>
+            <div class="p-4 rounded-xl bg-white/5 border border-white/10">
+              <span class="text-brand-orange font-mono font-bold text-xs">2026 — PRESENT</span>
+              <h4 class="text-sm font-bold text-white mt-1">10M+ Deliveries Completed</h4>
+              <p class="text-[11px] text-gray-400 mt-1">World-class $1B+ logistics platform trusted by top restaurant chains.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section id="services" class="py-24 relative bg-brand-card/30">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+          <span class="text-xs uppercase font-bold text-brand-peach tracking-widest px-3 py-1 rounded-full glass-panel border border-brand-orange/30">Services</span>
+          <h2 class="text-3xl sm:text-5xl font-extrabold text-white mt-4 mb-4">Next-Gen Delivery <span class="text-gradient-orange">Ecosystem</span></h2>
+          <p class="text-sm sm:text-base text-gray-300">Explore our comprehensive suite of AI-powered food, grocery, catering, and health subscription services.</p>
+        </div>
+
+        <!-- Services Grid Container -->
+        <div id="services-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
+      </div>
+    </section>
+
+    <!-- AI FEATURES MATRIX -->
+    <section id="features" class="py-24 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+          <span class="text-xs uppercase font-bold text-brand-peach tracking-widest px-3 py-1 rounded-full glass-panel border border-brand-orange/30">AI Engineering</span>
+          <h2 class="text-3xl sm:text-5xl font-extrabold text-white mt-4 mb-4">Powered by Neural <span class="text-gradient-orange">Intelligence</span></h2>
+          <p class="text-sm sm:text-base text-gray-300">Nine proprietary technology breakthroughs engineered for sub-second precision and culinary perfection.</p>
+        </div>
+
+        <div id="features-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6"></div>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE AI LAB DEMO WIDGETS -->
+    <section id="ai-demo" class="py-24 relative bg-brand-dark/90 border-y border-white/10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+          <span class="text-xs uppercase font-bold text-green-400 tracking-widest px-3 py-1 rounded-full glass-panel border border-green-500/30">Interactive AI Lab</span>
+          <h2 class="text-3xl sm:text-5xl font-extrabold text-white mt-4 mb-4">Test Our Live <span class="text-gradient-orange">AI Engine</span></h2>
+          <p class="text-sm sm:text-base text-gray-300">Try out our interactive dish recommender and live autonomous drone telemetry simulator below.</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+
+          <!-- Left Interactive AI Food Recommender Widget -->
+          <div class="lg:col-span-6 p-8 rounded-3xl glass-panel border border-brand-orange/40 shadow-2xl">
+            <div class="flex items-center justify-between mb-6">
+              <h3 class="text-xl font-bold text-white flex items-center gap-2">
+                <span>🧠</span> AI Craving Matcher
+              </h3>
+              <span class="text-xs font-mono text-brand-peach">v4.8 ACTIVE</span>
+            </div>
+
+            <form id="ai-recommender-form" class="space-y-4">
+              <div>
+                <label class="block text-xs font-bold text-gray-300 mb-2 uppercase tracking-wider">Current Mood & Vibe</label>
+                <select id="ai-mood-select" class="w-full bg-white/5 border border-white/15 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-orange">
+                  <option value="coding">Late Night Coding Sprint 💻</option>
+                  <option value="gym">Post-Workout Muscle Recovery 🏋️‍♂️</option>
+                  <option value="comfort">Weekend Comfort Treat 🍔</option>
+                  <option value="vegan">Clean Biometric Vegan Refresh 🥗</option>
+                </select>
+              </div>
+
+              <button type="submit" class="btn-glow-orange btn-ripple w-full py-3.5 rounded-xl font-bold text-sm text-white shadow-lg flex items-center justify-center gap-2">
+                <span>Generate AI Craving Match</span>
+                <span>✨</span>
+              </button>
+            </form>
+
+            <div id="ai-recommender-result" class="mt-6">
+              <div class="p-6 rounded-2xl glass-panel border border-white/10 text-center">
+                <span class="text-2xl block mb-2">👈</span>
+                <span class="text-xs text-gray-400">Select your vibe and click above to generate an instant neural match dish!</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Live Drone Telemetry Map Simulator -->
+          <div class="lg:col-span-6 p-8 rounded-3xl glass-panel border border-white/10 shadow-2xl">
+            <div class="flex items-center justify-between mb-6">
+              <h3 class="text-xl font-bold text-white flex items-center gap-2">
+                <span>🛰️</span> Live Telemetry Simulator
+              </h3>
+              <span class="text-xs font-mono text-green-400 flex items-center gap-1">
+                <span class="w-2 h-2 rounded-full bg-green-500 animate-ping"></span> LIVE GPS
+              </span>
+            </div>
+
+            <div id="live-map-sim" class="relative h-64 rounded-2xl bg-[#141416] border border-white/10 overflow-hidden mb-6 p-4 flex flex-col justify-between">
+              <!-- Map Grid SVG Mock -->
+              <svg class="absolute inset-0 w-full h-full opacity-20 pointer-events-none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#FF6B00" stroke-width="0.5"/>
+                  </pattern>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#grid)" />
+              </svg>
+
+              <div class="relative z-10 flex items-center justify-between text-xs">
+                <span class="px-3 py-1 rounded-full bg-brand-orange/20 text-brand-peach border border-brand-orange/40 font-mono">DRONE: QB-ALPHA-7</span>
+                <span class="text-gray-400 font-mono">ALT: 120m • SPEED: 45 km/h</span>
+              </div>
+
+              <!-- Animated Route Track Line -->
+              <div class="relative z-10 my-auto">
+                <div class="w-full bg-white/10 h-2 rounded-full relative overflow-hidden">
+                  <div id="sim-progress-line" class="bg-gradient-to-r from-brand-orange to-green-400 h-full w-[40%] transition-all duration-300"></div>
+                </div>
+                <div id="sim-drone-marker" class="absolute top-1/2 -translate-y-1/2 left-[40%] transform -translate-x-1/2 w-6 h-6 rounded-full bg-brand-orange border-2 border-white shadow-lg flex items-center justify-center text-[10px] text-white">
+                  🚁
+                </div>
+              </div>
+
+              <div class="relative z-10 grid grid-cols-3 gap-2 text-center text-xs">
+                <div class="p-2 rounded-xl bg-white/5 border border-white/10">
+                  <span class="text-[10px] text-gray-400 block">ETA Timer</span>
+                  <span id="sim-eta" class="font-bold text-green-400 font-mono">11 mins</span>
+                </div>
+                <div class="p-2 rounded-xl bg-white/5 border border-white/10">
+                  <span class="text-[10px] text-gray-400 block">Thermal Temp</span>
+                  <span id="sim-temp" class="font-bold text-brand-orange font-mono">75.8°C</span>
+                </div>
+                <div class="p-2 rounded-xl bg-white/5 border border-white/10">
+                  <span class="text-[10px] text-gray-400 block">Distance</span>
+                  <span id="sim-distance" class="font-bold text-white font-mono">1.8 km</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Console Log -->
+            <div id="sim-log-console" class="p-3 rounded-xl bg-black/60 border border-white/10 font-mono text-[11px] text-green-400 truncate">
+              SYS TELEMETRY: Autonomous Drone QB-Alpha-7 dispatched.
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS TIMELINE -->
+    <section id="how-it-works" class="py-24 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+          <span class="text-xs uppercase font-bold text-brand-peach tracking-widest px-3 py-1 rounded-full glass-panel border border-brand-orange/30">Seamless Workflow</span>
+          <h2 class="text-3xl sm:text-5xl font-extrabold text-white mt-4 mb-4">How <span class="text-gradient-orange">QuickBite AI</span> Works</h2>
+          <p class="text-sm sm:text-base text-gray-300">From craving intuition to doorstep delivery in 5 automated steps.</p>
+        </div>
+
+        <div id="how-it-works-timeline" class="grid grid-cols-1 md:grid-cols-5 gap-6"></div>
+      </div>
+    </section>
+
+    <!-- WHY CHOOSE US SPLIT SECTION -->
+    <section class="py-24 relative bg-brand-card/20 border-y border-white/10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <!-- Left Image Graphic -->
+        <div class="lg:col-span-5 reveal">
+          <div class="relative rounded-3xl overflow-hidden glass-panel border border-brand-orange/30 p-2 shadow-2xl">
+            <img src="./assets/ai_drone_delivery.jpg" alt="Autonomous Drone Food Delivery" class="w-full h-auto rounded-2xl object-cover" />
+            <div class="absolute bottom-6 left-6 right-6 p-4 rounded-2xl glass-panel border border-white/10">
+              <span class="text-xs font-bold text-white block">100% Zero Emission Logistics</span>
+              <span class="text-[10px] text-gray-300">Powered by solar-charged electric drones and urban darkstores.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Content -->
+        <div class="lg:col-span-7 reveal">
+          <span class="text-xs uppercase font-bold text-brand-peach tracking-widest px-3 py-1 rounded-full glass-panel border border-brand-orange/30">Unmatched Advantage</span>
+          <h2 class="text-3xl sm:text-5xl font-extrabold text-white mt-4 mb-6">Why Billion-Dollar Companies Choose <span class="text-gradient-orange">QuickBite AI</span></h2>
+          <p class="text-sm text-gray-300 mb-8 leading-relaxed">
+            We don't just deliver food; we engineer hyper-reliable autonomous delivery pipelines with sub-second telemetry and fresh thermal control.
+          </p>
+
+          <div id="why-choose-us-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-4"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OUR APP SHOWCASE -->
+    <section id="app" class="py-24 relative overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal">
+        <span class="text-xs uppercase font-bold text-brand-peach tracking-widest px-3 py-1 rounded-full glass-panel border border-brand-orange/30">Mobile Innovation</span>
+        <h2 class="text-3xl sm:text-5xl font-extrabold text-white mt-4 mb-4">The QuickBite AI App in Your <span class="text-gradient-orange">Pocket</span></h2>
+        <p class="text-sm sm:text-base text-gray-300 mb-12 max-w-2xl mx-auto">Available on iOS App Store & Android Play Store. Experience instant 1-tap reordering and biometrics.</p>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+          <div class="p-6 rounded-2xl glass-panel border border-white/10 text-center hover:border-brand-orange/50 transition-all">
+            <span class="text-3xl block mb-2">✨</span>
+            <h4 class="text-base font-bold text-white mb-1">Food Discovery</h4>
+            <p class="text-xs text-gray-400">AI craving recommendation feed</p>
+          </div>
+          <div class="p-6 rounded-2xl glass-panel border border-white/10 text-center hover:border-brand-orange/50 transition-all">
+            <span class="text-3xl block mb-2">📍</span>
+            <h4 class="text-base font-bold text-white mb-1">Live Order Map</h4>
+            <p class="text-xs text-gray-400">3D real-time drone telemetry</p>
+          </div>
+          <div class="p-6 rounded-2xl glass-panel border border-white/10 text-center hover:border-brand-orange/50 transition-all">
+            <span class="text-3xl block mb-2">🏷️</span>
+            <h4 class="text-base font-bold text-white mb-1">Smart Offers</h4>
+            <p class="text-xs text-gray-400">Auto-applied stackable savings</p>
+          </div>
+          <div class="p-6 rounded-2xl glass-panel border border-white/10 text-center hover:border-brand-orange/50 transition-all">
+            <span class="text-3xl block mb-2">💎</span>
+            <h4 class="text-base font-bold text-white mb-1">QuickBite Wallet</h4>
+            <p class="text-xs text-gray-400">Instant cashback & rewards</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section class="py-24 relative bg-brand-card/30 border-y border-white/10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+          <span class="text-xs uppercase font-bold text-brand-peach tracking-widest px-3 py-1 rounded-full glass-panel border border-brand-orange/30">Customer Reviews</span>
+          <h2 class="text-3xl sm:text-5xl font-extrabold text-white mt-4 mb-4">Loved by <span class="text-gradient-orange">10 Million+</span> Foodies</h2>
+          <p class="text-sm text-gray-300">Here is what leading tech leaders and food lovers say about QuickBite AI.</p>
+        </div>
+
+        <div id="testimonials-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6"></div>
+      </div>
+    </section>
+
+    <!-- PRICING SECTION -->
+    <section id="pricing" class="py-24 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-12 reveal">
+          <span class="text-xs uppercase font-bold text-brand-peach tracking-widest px-3 py-1 rounded-full glass-panel border border-brand-orange/30">Quick Membership</span>
+          <h2 class="text-3xl sm:text-5xl font-extrabold text-white mt-4 mb-4">Simple, Transparent <span class="text-gradient-orange">Pricing</span></h2>
+          <p class="text-sm text-gray-300 mb-8">Unlock $0 delivery fees, priority drone dispatch, and free macro scanning.</p>
+
+          <!-- Monthly / Annual Toggle -->
+          <div class="flex items-center justify-center gap-4 text-sm font-semibold">
+            <span class="text-gray-300">Monthly</span>
+            <label class="relative inline-flex items-center cursor-pointer">
+              <input type="checkbox" id="pricing-billing-toggle" class="sr-only peer" />
+              <div class="w-14 h-7 bg-white/10 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-brand-orange after:border-gray-300 after:border after:rounded-full after:h-6 after:w-6 after:transition-all peer-checked:bg-brand-orange/40 border border-white/20"></div>
+            </label>
+            <span class="text-white flex items-center gap-1.5">
+              <span>Annual</span>
+              <span class="text-[10px] font-bold text-green-400 bg-green-500/20 px-2 py-0.5 rounded-full border border-green-500/30">Save 20%</span>
+            </span>
+          </div>
+        </div>
+
+        <div id="pricing-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8"></div>
+      </div>
+    </section>
+
+    <!-- BLOG SECTION -->
+    <section id="blog" class="py-24 relative bg-brand-card/20 border-y border-white/10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+          <span class="text-xs uppercase font-bold text-brand-peach tracking-widest px-3 py-1 rounded-full glass-panel border border-brand-orange/30">Latest Insights</span>
+          <h2 class="text-3xl sm:text-5xl font-extrabold text-white mt-4 mb-4">Food & Tech <span class="text-gradient-orange">Journal</span></h2>
+          <p class="text-sm text-gray-300">Read our research on autonomous drone corridors, neural routing, and biometric nutrition.</p>
+        </div>
+
+        <div id="blog-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8"></div>
+      </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="py-24 relative">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16 reveal">
+          <span class="text-xs uppercase font-bold text-brand-peach tracking-widest px-3 py-1 rounded-full glass-panel border border-brand-orange/30">Got Questions?</span>
+          <h2 class="text-3xl sm:text-5xl font-extrabold text-white mt-4 mb-4">Frequently Asked <span class="text-gradient-orange">Questions</span></h2>
+        </div>
+
+        <div id="faq-accordion" class="space-y-4"></div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="py-24 relative bg-brand-card/30 border-t border-white/10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+          <span class="text-xs uppercase font-bold text-brand-peach tracking-widest px-3 py-1 rounded-full glass-panel border border-brand-orange/30">Contact Us</span>
+          <h2 class="text-3xl sm:text-5xl font-extrabold text-white mt-4 mb-4">Get in Touch with <span class="text-gradient-orange">QuickBite AI</span></h2>
+          <p class="text-sm text-gray-300">Whether you are a customer, restaurant partner, or investor, we are available 24/7.</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          <!-- Left Contact Info Cards -->
+          <div class="lg:col-span-5 space-y-6">
+            <div class="p-6 rounded-2xl glass-panel border border-white/10 flex items-center gap-4">
+              <span class="text-3xl p-3 rounded-xl bg-brand-orange/20 text-brand-orange">📍</span>
+              <div>
+                <h4 class="text-base font-bold text-white">Global Headquarters</h4>
+                <p class="text-xs text-gray-400">450 Innovation Parkway, Silicon Valley, CA 94025</p>
+              </div>
+            </div>
+
+            <div class="p-6 rounded-2xl glass-panel border border-white/10 flex items-center gap-4">
+              <span class="text-3xl p-3 rounded-xl bg-brand-orange/20 text-brand-orange">✉️</span>
+              <div>
+                <h4 class="text-base font-bold text-white">24/7 AI Support Email</h4>
+                <p class="text-xs text-gray-400">support@quickbite.ai / press@quickbite.ai</p>
+              </div>
+            </div>
+
+            <div class="p-6 rounded-2xl glass-panel border border-white/10 flex items-center gap-4">
+              <span class="text-3xl p-3 rounded-xl bg-brand-orange/20 text-brand-orange">📞</span>
+              <div>
+                <h4 class="text-base font-bold text-white">Toll-Free Phone</h4>
+                <p class="text-xs text-gray-400">+1 (800) 555-QUICK (7842)</p>
+              </div>
+            </div>
+
+            <!-- Interactive Map Widget -->
+            <div class="h-48 rounded-2xl bg-black/60 border border-white/10 overflow-hidden relative flex items-center justify-center p-4">
+              <div class="text-center">
+                <span class="text-3xl block mb-2">🗺️</span>
+                <span class="text-xs font-bold text-white block">Silicon Valley Tech Campus</span>
+                <span class="text-[10px] text-brand-peach font-mono">37.4220° N, 122.0841° W</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Contact Form -->
+          <div class="lg:col-span-7 p-8 rounded-3xl glass-panel border border-brand-orange/40 shadow-2xl">
+            <h3 class="text-xl font-bold text-white mb-6">Send Us a Direct Message</h3>
+            <form id="contact-form" class="space-y-4">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-bold text-gray-300 mb-1">Your Full Name</label>
+                  <input type="text" required placeholder="Alex Rivera" class="w-full bg-white/5 border border-white/15 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-orange" />
+                </div>
+                <div>
+                  <label class="block text-xs font-bold text-gray-300 mb-1">Your Email</label>
+                  <input type="email" required placeholder="alex@company.com" class="w-full bg-white/5 border border-white/15 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-orange" />
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold text-gray-300 mb-1">Subject</label>
+                <select class="w-full bg-white/5 border border-white/15 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-orange">
+                  <option value="general">Customer Support Inquiry</option>
+                  <option value="partner">Restaurant Partner Onboarding</option>
+                  <option value="investor">Investor Relations</option>
+                  <option value="careers">Careers & Jobs</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold text-gray-300 mb-1">Message</label>
+                <textarea rows="4" required placeholder="Tell us how QuickBite AI can assist you today..." class="w-full bg-white/5 border border-white/15 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-orange"></textarea>
+              </div>
+
+              <button type="submit" class="btn-glow-orange btn-ripple w-full py-4 rounded-xl font-bold text-sm text-white shadow-xl flex items-center justify-center gap-2">
+                <span>Send Message</span>
+                <span>✉️</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXTRA SECTIONS: CAREERS & SUSTAINABILITY -->
+    <section class="py-20 relative bg-brand-dark">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-6">
+            <span class="text-xs uppercase font-bold text-green-400 tracking-widest px-3 py-1 rounded-full glass-panel border border-green-500/30">Careers at QuickBite</span>
+            <h3 class="text-3xl font-extrabold text-white mt-3 mb-4">Join the Next-Gen <span class="text-gradient-orange">AI Logistics Revolution</span></h3>
+            <p class="text-xs sm:text-sm text-gray-300 mb-6 leading-relaxed">We are hiring world-class machine learning researchers, full-stack engineers, product designers, and fleet operations leaders.</p>
+
+            <div id="careers-list" class="space-y-3"></div>
+          </div>
+
+          <div class="lg:col-span-6 p-8 rounded-3xl glass-panel border border-green-500/30 text-center">
+            <span class="text-5xl block mb-4">🌱</span>
+            <h3 class="text-2xl font-extrabold text-white mb-2">Sustainability & CSR Impact</h3>
+            <p class="text-xs text-gray-300 mb-6 leading-relaxed">QuickBite AI is committed to zero carbon footprint delivery by 2028. All food containers are 100% plant-based cassava compostable.</p>
+
+            <div class="grid grid-cols-2 gap-4 text-center">
+              <div class="p-4 rounded-xl bg-white/5 border border-white/10">
+                <span class="text-2xl font-bold text-green-400 block font-mono">1.2M kg</span>
+                <span class="text-[10px] text-gray-400">CO2 Offset Avoided</span>
+              </div>
+              <div class="p-4 rounded-xl bg-white/5 border border-white/10">
+                <span class="text-2xl font-bold text-brand-orange block font-mono">0 Plastic</span>
+                <span class="text-[10px] text-gray-400">100% Plant Containers</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-black text-gray-400 text-xs pt-16 pb-12 border-t border-white/10 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
+
+        <!-- Column 1 Brand -->
+        <div class="lg:col-span-2 space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-lg bg-brand-orange flex items-center justify-center text-white font-bold text-lg">⚡</div>
+            <span class="font-heading text-lg font-bold text-white">QuickBite <span class="text-brand-orange">AI</span></span>
+          </div>
+          <p class="text-xs text-gray-400 max-w-sm leading-relaxed">
+            QuickBite AI is the billion-dollar startup platform combining artificial intelligence, dark fulfillment hubs, and autonomous drone delivery.
+          </p>
+
+          <!-- Newsletter Form -->
+          <form id="newsletter-form" class="flex items-center gap-2 max-w-sm">
+            <input type="email" required placeholder="Enter your email" class="w-full bg-white/5 border border-white/15 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-brand-orange" />
+            <button type="submit" class="btn-glow-orange px-4 py-2.5 rounded-xl font-bold text-white text-xs">
+              Subscribe
+            </button>
+          </form>
+        </div>
+
+        <!-- Column 2 Products -->
+        <div>
+          <h5 class="text-white font-bold mb-4 uppercase tracking-wider text-[11px]">Products</h5>
+          <ul class="space-y-2">
+            <li><a href="#services" class="hover:text-white transition-colors">AI Ultra Delivery</a></li>
+            <li><a href="#services" class="hover:text-white transition-colors">Instant Grocery</a></li>
+            <li><a href="#services" class="hover:text-white transition-colors">Cloud Kitchen Incubator</a></li>
+            <li><a href="#services" class="hover:text-white transition-colors">Corporate AI Catering</a></li>
+            <li><a href="#services" class="hover:text-white transition-colors">Biometric Healthy Plans</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3 Company -->
+        <div>
+          <h5 class="text-white font-bold mb-4 uppercase tracking-wider text-[11px]">Company</h5>
+          <ul class="space-y-2">
+            <li><a href="#about" class="hover:text-white transition-colors">About QuickBite</a></li>
+            <li><a href="#about" class="hover:text-white transition-colors">Company Timeline</a></li>
+            <li><a href="#blog" class="hover:text-white transition-colors">Blog & Research</a></li>
+            <li><a href="#contact" class="hover:text-white transition-colors">Investor Relations</a></li>
+            <li><a href="#contact" class="hover:text-white transition-colors">Press & Media</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4 Legal & Social -->
+        <div>
+          <h5 class="text-white font-bold mb-4 uppercase tracking-wider text-[11px]">Legal & Social</h5>
+          <ul class="space-y-2">
+            <li><a href="#" class="hover:text-white transition-colors">Privacy Policy</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Terms of Service</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Security Audit</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Twitter / X</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">LinkedIn</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between text-[11px] text-gray-500 gap-4">
+        <span>© 2026 QuickBite AI Inc. All rights reserved. Designed for College Billion-Dollar Startup Competition.</span>
+        <div class="flex items-center gap-4">
+          <span>🇺🇸 United States (English)</span>
+          <span>⚡ Sub-15 Min Telemetry Active</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING LIVE CHAT WIDGET BUTTON -->
+  <button id="chat-widget-toggle" class="fixed bottom-6 right-6 z-[999] w-14 h-14 rounded-full btn-glow-orange flex items-center justify-center text-2xl text-white shadow-2xl hover:scale-110 transition-transform">
+    💬
+  </button>
+
+  <!-- CHAT WIDGET DRAWER -->
+  <div id="chat-widget-drawer" class="hidden fixed bottom-24 right-6 z-[999] w-80 sm:w-96 h-96 rounded-3xl glass-panel border border-brand-orange/40 shadow-2xl flex flex-col justify-between overflow-hidden">
+    <div class="p-4 bg-brand-orange/20 border-b border-white/10 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <span class="w-3 h-3 rounded-full bg-green-500 animate-pulse"></span>
+        <span class="font-bold text-sm text-white">QuickBite AI Concierge</span>
+      </div>
+      <button id="chat-widget-close" class="text-gray-400 hover:text-white text-lg">✕</button>
+    </div>
+
+    <div id="chat-widget-messages" class="p-4 overflow-y-auto flex-1 flex flex-col gap-2">
+      <div class="self-start bg-white/10 border border-white/10 text-gray-200 text-xs px-3.5 py-2.5 rounded-2xl rounded-tl-none max-w-[85%] shadow">
+        Hello! I am QuickBite AI Assistant. Ask me anything about your food order, menu recommendations, or membership!
+      </div>
+    </div>
+
+    <form id="chat-widget-form" class="p-3 bg-black/40 border-t border-white/10 flex items-center gap-2">
+      <input id="chat-widget-input" type="text" placeholder="Ask QuickBite AI..." class="w-full bg-white/5 border border-white/15 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-brand-orange" />
+      <button type="submit" class="btn-glow-orange px-3 py-2 rounded-xl text-white font-bold text-xs">Send</button>
+    </form>
+  </div>
+
+  <!-- ORDER MODAL -->
+  <div id="order-modal" class="hidden fixed inset-0 z-[10000] bg-black/80 backdrop-blur-md items-center justify-center p-4">
+    <div class="w-full max-w-md p-8 rounded-3xl glass-panel border border-brand-orange/40 shadow-2xl relative">
+      <button onclick="window.closeOrderModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white text-xl">✕</button>
+      <div class="text-center mb-6">
+        <span class="text-3xl block mb-2">🚀</span>
+        <h3 class="text-2xl font-bold text-white">Confirm Instant AI Order</h3>
+        <p class="text-xs text-gray-400 mt-1">Autonomous Drone Dispatch Ready</p>
+      </div>
+
+      <div class="p-4 rounded-2xl bg-white/5 border border-white/10 mb-6 flex items-center justify-between text-sm">
+        <div>
+          <span id="modal-order-item" class="font-bold text-white block">AI Gourmet Selection</span>
+          <span class="text-xs text-gray-400">Guaranteed ETA: 12 Mins</span>
+        </div>
+        <span id="modal-order-price" class="text-xl font-bold text-brand-orange">$15.90</span>
+      </div>
+
+      <form onsubmit="window.confirmOrderPayment(event)" class="space-y-4">
+        <div>
+          <label class="block text-xs font-bold text-gray-300 mb-1">Delivery Address</label>
+          <input type="text" required value="742 Evergreen Terrace, San Francisco, CA" class="w-full bg-white/5 border border-white/15 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-brand-orange" />
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-gray-300 mb-1">Payment Method</label>
+          <select class="w-full bg-white/5 border border-white/15 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-brand-orange">
+            <option>Apple Pay / Biometrics (Instant)</option>
+            <option>QuickBite AI Wallet ($45.00 Balance)</option>
+            <option>Credit Card (•••• 8892)</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn-glow-orange btn-ripple w-full py-4 rounded-xl font-bold text-sm text-white shadow-xl">
+          Confirm Order & Launch Drone 🚁
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- JavaScript Entry -->
+</body>
+</html>
